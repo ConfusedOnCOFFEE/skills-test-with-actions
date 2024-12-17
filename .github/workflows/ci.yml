@@ -22,4 +22,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: remark-lint-report
+          path: remark-lint-report.json
 
